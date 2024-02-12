@@ -7,14 +7,14 @@ on:
 
 
 jobs:
-  build:
-  steps:
-      name: Checkout
-          uses: actions/checkout@v3
-      name: Install dependencies
-          run: python -m pip install --upgrade pip | pip install -r requirements.txt 
-      name: Lint with flake8
-          run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+    build:
+    steps:
+        name: Checkout
+            uses: actions/checkout@v3
+        name: Install dependencies
+            run: python -m pip install --upgrade pip | pip install -r requirements.txt 
+        name: Lint with flake8
+            run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
     runs-on: ubuntu-latest
     container: python:3.9-slim
 
