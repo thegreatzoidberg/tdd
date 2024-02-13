@@ -50,10 +50,6 @@ def delete_counter(name):
     """Delete a counter"""
     app.logger.info(f"Request to delete counter: {name}")
     global COUNTERS
-    if name not in COUNTERS:
-        return {"Message": f"Counter {name} does not exist"}, status.HTTP_204_NO_CONTENT
     del COUNTERS[name]
-    if name in COUNTERS:
-        return {"Message": f"Counter {name} was not deleted"}, status.HTTP_409_CONFLICT
     if name not in COUNTERS:
         return name, status.HTTP_200_OK
