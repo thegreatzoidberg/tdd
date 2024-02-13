@@ -23,6 +23,7 @@ def create_counter(name):
     COUNTERS[name] = 0
     return {name: COUNTERS[name]}, status.HTTP_201_CREATED
 
+
 @app.route('/counters/<name>', methods=['PUT'])
 def update_counter(name):
     """Update a counter"""
@@ -32,6 +33,7 @@ def update_counter(name):
 
     return {name: COUNTERS[name]}, status.HTTP_200_OK
 
+
 @app.route('/counters/<name>', methods=['GET'])
 def read_counter(name):
     """Read a counter"""
@@ -40,11 +42,3 @@ def read_counter(name):
     x = {name: COUNTERS[name]}
 
     return x, status.HTTP_200_OK
-
-
-
-
-
-
-
-
