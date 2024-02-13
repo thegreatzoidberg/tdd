@@ -67,6 +67,6 @@ class CounterTest(TestCase):
         client = app.test_client()
         result = client.post('/counters/foo4')
         result = self.client.delete('/counters/foo4')
-        self.assertEqual(result.status_code, status.HTTP_200_OK)
+        self.assertEqual(result.status_code, status.HTTP_204_NO_CONTENT)
 
 
